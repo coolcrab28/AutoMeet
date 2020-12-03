@@ -1,0 +1,2 @@
+from AutoMeet import *
+main()
