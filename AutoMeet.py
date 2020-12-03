@@ -7,6 +7,12 @@ h = (ctime(response.tx_time).split()[3][:2])
 m = (ctime(response.tx_time).split()[3][3:5])
 s = (ctime(response.tx_time).split()[3][6:8])
 
+time_table = {
+  'Mon' : {1:'https://meet.google.com/gcz-dqvd-dqk',
+           2:'https://meet.google.com/wue-ebpx-bby',
+           3:'',
+           4:''}
+}
 
 if (int(h)>=8) and (int(h)<=13):
   from selenium import webdriver
@@ -27,7 +33,7 @@ if (int(h)>=8) and (int(h)<=13):
   username = input("Enter username/email: ")
   password = getpass.getpass(prompt='Password: ', stream=None)
   class_time = int(input("Enter class time in minutes: "))
-  link = 'https://meet.google.com/ybe-igtq-skc'
+  link = 'https://meet.google.com/the-meet-link'
   # class_time *= 60
   browser = webdriver.Chrome(options=options)
   def main(*b):
