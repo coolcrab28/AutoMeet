@@ -8,7 +8,7 @@ m = (ctime(response.tx_time).split()[3][3:5])
 s = (ctime(response.tx_time).split()[3][6:8])
 
 
-if (int(h)>=8) and (int(h)<=20):
+if (int(h)>=8) and (int(h)<=13):
   from selenium import webdriver
   import time 
   import getpass
@@ -33,7 +33,7 @@ if (int(h)>=8) and (int(h)<=20):
   def main(*b):
     login(username,password)
   def login(username, password):
-      file = f"""file:///{path}/index.html"""
+      file = f"""file:///{path}/end.html"""
       browser.get(('https://stackoverflow.com/'))
       browser.find_element_by_xpath("/html/body/header/div/ol[2]/li[2]/a[2]").click()
       browser.find_element_by_xpath("//*[@id=\"openid-buttons\"]/button[1]").click()
