@@ -3,16 +3,42 @@ from time import ctime
 
 ntp_client = ntplib.NTPClient()
 response = ntp_client.request('pool.ntp.org')
+day = (ctime(response.tx_time)[0:3])
 h = (ctime(response.tx_time).split()[3][:2])
 m = (ctime(response.tx_time).split()[3][3:5])
 s = (ctime(response.tx_time).split()[3][6:8])
 
 time_table = {
-  'Mon' : {1:'https://meet.google.com/gcz-dqvd-dqk',
-           2:'https://meet.google.com/wue-ebpx-bby',
-           3:'',
-           4:''}
+'Mon' : {1:'https://meet.google.com/gcz-dqvd-dqk',
+          2:'https://meet.google.com/wue-ebpx-bby',
+          3:'https://meet.google.com/ybe-igtq-skc',
+          4:'https://meet.google.com/gma-qvzv-emy'}
+
+,
+
+'Tue' : {1:'https://meet.google.com/wue-ebpx-bby',
+          2:'https://meet.google.com/giv-pooz-aea',
+          3:'https://meet.google.com/ybe-igtq-skc',
+          4:'https://meet.google.com/gma-qvzv-emy'}
+, 
+
+'Wed' : {1:'https://meet.google.com/giv-pooz-aea',
+          2:'https://meet.google.com/gcz-dqvd-dqk',
+          3:'https://meet.google.com/ybe-igtq-skc',
+          4:'https://meet.google.com/gma-qvzv-emy'
+        }
+,
+
+'Thu' : {1:'https://meet.google.com/gcz-dqvd-dqk',
+          2:'https://meet.google.com/wue-ebpx-bby',
+          3:'https://meet.google.com/ybe-igtq-skc',
+          4:'https://meet.google.com/gma-qvzv-emy'
+        }
 }
+
+
+x = 0
+if int(h)>=8
 
 if (int(h)>=8) and (int(h)<=13):
   from selenium import webdriver
@@ -33,7 +59,7 @@ if (int(h)>=8) and (int(h)<=13):
   username = input("Enter username/email: ")
   password = getpass.getpass(prompt='Password: ', stream=None)
   class_time = int(input("Enter class time in minutes: "))
-  link = 'https://meet.google.com/the-meet-link'
+  link = time_table[day][3]
   # class_time *= 60
   browser = webdriver.Chrome(options=options)
   def main(*b):
