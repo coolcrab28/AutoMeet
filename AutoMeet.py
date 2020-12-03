@@ -1,5 +1,6 @@
 import ntplib
 from time import ctime
+import datetime
 
 ntp_client = ntplib.NTPClient()
 response = ntp_client.request('pool.ntp.org')
@@ -7,7 +8,8 @@ day = (ctime(response.tx_time)[0:3])
 h = (ctime(response.tx_time).split()[3][:2])
 m = (ctime(response.tx_time).split()[3][3:5])
 s = (ctime(response.tx_time).split()[3][6:8])
-
+cur_time = datetime.time(int(h),int(m),int(s))
+print(cur_time)
 time_table = {
 'Mon' : {1:'https://meet.google.com/gcz-dqvd-dqk',
           2:'https://meet.google.com/wue-ebpx-bby',
@@ -38,7 +40,8 @@ time_table = {
 
 
 x = 0
-if int(h)>=8
+if int(h)>=8 and int(h)<=10:
+
 
 if (int(h)>=8) and (int(h)<=13):
   from selenium import webdriver
